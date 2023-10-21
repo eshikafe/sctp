@@ -280,8 +280,8 @@ impl SctpListener {
         self.0.set_nonblocking(nonblocking)
     }
 
-    pub fn event_subsctibe(&self, event: Event) -> io::Result<()> {
-        self.0.event_subsctibe(event)
+    pub fn event_subscribe(&self, event: Event) -> io::Result<()> {
+        self.0.event_subscribe(event)
     }
 
     pub fn try_clone(&self) -> io::Result<SctpListener> {
@@ -424,8 +424,8 @@ impl SctpEndpoint {
         self.0.timeout(libc::SO_RCVTIMEO)
     }
 
-    pub fn event_subsctibe(&self, event: Event) -> io::Result<()> {
-        self.0.event_subsctibe(event)
+    pub fn event_subscribe(&self, event: Event) -> io::Result<()> {
+        self.0.event_subscribe(event)
     }
 
     pub fn try_clone(&self) -> io::Result<SctpStream> {

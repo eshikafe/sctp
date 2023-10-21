@@ -428,7 +428,7 @@ impl Socket {
         Ok(())
     }
 
-    pub fn event_subsctibe(&self, event: Event) -> io::Result<()> {
+    pub fn event_subscribe(&self, event: Event) -> io::Result<()> {
         let mut subscribe: sys::sctp_event_subscribe = unsafe { mem::zeroed() };
 
         if event.contains(Event::data_io()) {
