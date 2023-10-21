@@ -616,11 +616,11 @@ extern "C" {
         len: usize,
         to: *const libc::sockaddr,
         tolen: libc::socklen_t,
-        ppid: libc::uint32_t,
-        flags: libc::uint32_t,
-        stream_no: libc::uint16_t,
-        timetolive: libc::uint32_t,
-        context: libc::uint32_t
+        ppid: u32,
+        flags: u32,
+        stream_no: u16,
+        timetolive: u32,
+        context: u32
     ) -> libc::c_int;
 
     pub fn sctp_send(
