@@ -94,7 +94,7 @@ impl Socket {
         }
     }
 
-    pub fn accept(&self, storage: *mut libc::sockaddr, len: *mut libc::socklen_t) -> io::Result<Socket> {;
+    pub fn accept(&self, storage: *mut libc::sockaddr, len: *mut libc::socklen_t) -> io::Result<Socket> {
         let fd = cvt_r(|| unsafe {
             libc::accept4(self.0.raw(), storage, len, libc::SOCK_CLOEXEC)
         })?;
